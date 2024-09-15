@@ -8,6 +8,9 @@ export const CartContext = createContext({
 });
 
 function shoppingCartReducer(state, action) {
+
+
+
   return state;
 }
 
@@ -24,6 +27,10 @@ export default function CartContextProvider({ children }) {
       });
     
       function handleAddItemToCart(id) {
+        shoppingCartDispatch({
+          type: 'ADD_ITEM'
+        });
+
         setShoppingCart((prevShoppingCart) => {
           const updatedItems = [...prevShoppingCart.items];
     
